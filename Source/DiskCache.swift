@@ -452,10 +452,10 @@ class DiskCache {
         if let
             baseURL = baseURL,
             fileURL = NSURL(string: path, relativeToURL: baseURL),
-            absFilePath = fileURL.absoluteString
+            absoluteFilePath = fileURL.absoluteString
         {
             var isDir : ObjCBool = false
-            if !NSFileManager.defaultManager().fileExistsAtPath(absFilePath, isDirectory: &isDir) {
+            if !NSFileManager.defaultManager().fileExistsAtPath(absoluteFilePath, isDirectory: &isDir) {
                 do {
                     try NSFileManager.defaultManager().createDirectoryAtURL(fileURL,
                         withIntermediateDirectories: true, attributes: nil)
